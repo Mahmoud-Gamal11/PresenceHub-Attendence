@@ -1,0 +1,207 @@
+:root {
+    --primary: #0A6C74; 
+    --gold: #D4A017; 
+    --dark-bg: #1A202C; 
+    --light-bg: #F8FAFC; 
+    --text-dark: #1A202C;
+    --text-light: #F8FAFC;
+    --shadow: rgba(0, 0, 0, 0.3);
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --light-bg: #1A202C;
+        --text-dark: #F8FAFC;
+        --text-light: #1A202C;
+    }
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: var(--light-bg);
+    color: var(--text-dark);
+    transition: background 0.5s ease, color 0.5s ease; 
+}
+
+.navbar {
+    background: linear-gradient(90deg, var(--primary) 0%, var(--dark-bg) 100%);
+    box-shadow: 0 4px 12px var(--shadow);
+    padding: 1rem 2rem;
+    z-index: 1000;
+}
+
+.navbar-brand {
+    font-size: 1.8rem;
+    font-weight: 900;
+    color: var(--gold) !important;
+    transition: transform 0.3s ease;
+}
+
+.navbar-brand:hover {
+    transform: scale(1.05);
+}
+
+.navbar-nav {
+    display: flex;
+    align-items: center;
+}
+
+.nav-link {
+    color: var(--text-light) !important;
+    font-weight: 600;
+    font-size: 1.1rem;
+    padding: 0.5rem 1rem;
+    margin: 0 0.5rem;
+    transition: all 0.3s ease;
+    position: relative;
+    text-decoration: none;
+}
+
+.nav-link:hover, .nav-link.active {
+    color: var(--gold) !important;
+    transform: scale(1.1);
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--gold);
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after, .nav-link.active::after {
+    width: 100%;
+}
+
+.btn-primary {
+    background: var(--primary);
+    border-color: var(--primary);
+    transition: all 0.3s ease;
+    font-weight: 600;
+    color: var(--text-light) !important;
+}
+
+.btn-primary:hover {
+    background: var(--gold);
+    border-color: var(--gold);
+    transform: scale(1.05);
+    color: var(--text-dark) !important;
+}
+
+.card {
+    border: none;
+    border-radius: 12px;
+    background: linear-gradient(90deg, var(--primary) 0%, var(--dark-bg) 100%) ;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 24px var(--shadow);
+}
+
+.form-control {
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    font-size: 1.1rem;
+    font-weight: 500;
+    background: var(--light-bg);
+    border-color: var(--text-dark);
+    color: var(--text-dark);
+    border: none;
+}
+
+.form-control:focus {
+    border-color: var(--gold);
+    box-shadow: 0 0 0 0.2rem rgba(212, 160, 23, 0.25);
+    transform: scale(1.02);
+}
+
+.notification {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    padding: 1rem 2rem;
+    border-radius: 12px;
+    z-index: 2000;
+    opacity: 0;
+    transform: translateY(-20px);
+    max-width: 400px;
+    box-shadow: 0 8px 24px var(--shadow);
+}
+
+.notification.success {
+    background: var(--gold);
+    color: var(--text-dark);
+}
+
+.notification.error {
+    background: #EF4444;
+    color: var(--text-light);
+}
+
+.text-gold {
+    color: var(--gold) !important;
+    transition: color 0.3s ease;
+}
+
+.text-gold:hover {
+    color: #ebebdf !important;
+}
+
+.spinner {
+    display: none;
+    border: 4px solid var(--text-light);
+    border-top: 4px solid var(--gold);
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    animation: spin 1s linear infinite;
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+@keyframes spin {
+    0% { transform: translateY(-50%) rotate(0deg); }
+    100% { transform: translateY(-50%) rotate(360deg); }
+}
+
+footer {
+    background: var(--dark-bg);
+    color: var(--text-light);
+}
+/* footer a:hover{
+    color:red ;
+} */
+
+h2, p {
+    color: #F8FAFC !important;
+    font-weight: 600;
+    color: var(--text-dark);
+}
+
+@media (max-width: 768px) {
+    .navbar-nav {
+        background: var(--primary);
+        padding: 1rem;
+        border-radius: 8px;
+        margin-top: 0.5rem;
+    }
+    .nav-link {
+        padding: 0.75rem;
+        font-size: 1rem;
+    }
+}
+#email::placeholder,#password::placeholder{
+    color:#333 ;
+}
+#email:focus::placeholder,#password:focus::placeholder {
+    color:#333 !important;
+}

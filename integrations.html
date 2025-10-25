@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PresenceHub - Integrations</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <link rel="stylesheet" href="integrations.css">
+</head>
+<body>
+    <div id="notification" class="notification"></div>
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html">PresenceHub</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link " href="dashboard.html">Dashboard</a></li>
+                    <li class="nav-item"><a class="nav-link" href="reports.html">Reports</a></li>
+                    <li class="nav-item"><a class="nav-link" href="user-management.html">User Management</a></li>
+                    <li class="nav-item"><a class="nav-link " href="complaints.html">Complaints</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="integrations.html">Integrations</a></li>
+                    <li class="nav-item"><a class="nav-link" href="vacations.html">Vacations</a></li>
+                    <li class="nav-item"><a class="nav-link" href="settings.html">Account</a></li>
+                    <li class="nav-item"><a class="nav-link text-danger" href="login.html" onclick="logout()">Logout</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <main class="container py-5 mt-5">
+        <section id="integrations">
+            <h2 class="display-6 fw-bold mb-4">Integrations</h2>
+            <div class="row g-4 mb-5">
+                <div class="col-md-6 col-lg-4">
+                    <div class="card shadow-sm integration-card h-100">
+                        <div class="card-body text-center">
+                            <div class="integration-icon mb-3">👤</div>
+                            <h5 class="card-title">HR Systems</h5>
+                            <p class="card-text">Connect with BambooHR, Workday, and SAP SuccessFactors</p>
+                            <button class="btn btn-outline-primary button" onclick="toggleIntegration('hr')">Connect</button>
+                            <div class="integration-status mt-2 d-none">✅ Connected</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="card shadow-sm integration-card h-100">
+                        <div class="card-body text-center">
+                            <div class="integration-icon mb-3">📧</div>
+                            <h5 class="card-title">Email</h5>
+                            <p class="card-text">Gmail, Outlook, and Office 365 integration</p>
+                            <button class="btn btn-outline-primary button" onclick="toggleIntegration('email')">Connect</button>
+                            <div class="integration-status mt-2 d-none">✅ Connected</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="card shadow-sm integration-card h-100">
+                        <div class="card-body text-center">
+                            <div class="integration-icon mb-3">💳</div>
+                            <h5 class="card-title">Payroll</h5>
+                            <p class="card-text">ADP, Paychex, and Gusto payroll sync</p>
+                            <button class="btn btn-outline-primary button" onclick="toggleIntegration('payroll')">Connect</button>
+                            <div class="integration-status mt-2 d-none">✅ Connected</div>
+                        </div>
+                    </div>
+                </div>
+            </div>  
+            <div class="card shadow-sm">
+                <div class="card-body">
+                    <h3 class="h5 fw-bold mb-3">Connected Integrations</h3>
+                    <div id="connected-integrations" class="row">
+                        <div class="col-12">
+                            <p class="text-muted">No integrations connected yet. Click "Connect" above to get started!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="bg-dark text-white text-center py-4">
+        &copy; 2025 PresenceHub | <a href="privacy.html" class="text-gold">Privacy Policy</a> |
+        <a href="terms.html" class="text-gold">Terms of Service</a>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="integrations.js"></script>
+</body>
+</html>

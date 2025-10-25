@@ -1,0 +1,107 @@
+:root {
+    --primary: #0A6C74; 
+    --gold: #D4A017; 
+    --dark-bg: #1A202C; 
+    --light-bg: #F8FAFC; 
+    --text-dark: #1A202C;
+    --text-light: #F8FAFC;
+    --shadow: rgba(0, 0, 0, 0.3);
+    --card-bg: #FFFFFF;
+    --card-shadow-light: rgba(0, 0, 0, 0.1);
+    --table-hover-light: #E2E8F0;
+    --table-hover-dark: #4A5568;
+    --danger: #EF4444;
+    --success: #22C55E;
+    --warning: #F59E0B;
+    --disabled-bg-light: #E2E8F0;
+    --disabled-bg-dark: #4A5568;
+    --border-light: #E2E8F0;
+    --border-dark: #4A5568;
+    --navbar-bg: rgba(10, 108, 116, 0.9);
+    --footer-bg: rgba(26, 32, 44, 0.9);
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --light-bg: #1A202C;
+        --text-dark: #F8FAFC;
+        --text-light: #1A202C;
+        --card-bg: #2D3748;
+        --card-shadow-light: rgba(0, 0, 0, 0.2);
+        --disabled-bg-light: #4A5568;
+        --disabled-bg-dark: #E2E8F0;
+        --border-light: #4A5568;
+        --border-dark: #E2E8F0;
+        --navbar-bg: rgba(26, 32, 44, 0.9);
+        --footer-bg: rgba(10, 108, 116, 0.9);
+    }
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: linear-gradient(135deg, var(--primary) 0%, var(--dark-bg) 100%);
+    color: var(--text-light);
+    overflow-x: hidden;
+}
+
+.navbar {
+    background: var(--navbar-bg);
+    backdrop-filter: blur(10px);
+}
+
+.navbar-brand {
+    font-size: 1.8rem;
+    font-weight: 900;
+    color: var(--gold) !important;
+}
+
+.error-icon {
+    font-size: 8rem;
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+    40% { transform: translateY(-30px); }
+    60% { transform: translateY(-15px); }
+}
+
+.btn-primary {
+    background: var(--gold);
+    border-color: var(--gold);
+    font-weight: 600;
+    padding: 12px 30px;
+    color: var(--text-dark) !important;
+}
+
+.btn-primary:hover {
+    background: var(--text-light);
+    border-color: var(--text-light);
+    color: var(--text-dark) !important;
+    transform: scale(1.05);
+}
+
+footer {
+    background: var(--footer-bg);
+}
+
+h1, h2 {
+    color: var(--text-light);
+}
+
+.text-danger {
+    color: var(--danger) !important;
+}
+
+@media (max-width: 768px) {
+    .navbar-nav {
+        background: var(--primary);
+        padding: 1rem;
+        border-radius: 8px;
+        margin-top: 0.5rem;
+    }
+    .nav-link {
+        padding: 0.75rem;
+        font-size: 1rem;
+    }
+}

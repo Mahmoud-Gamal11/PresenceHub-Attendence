@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PresenceHub - Sign Up</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <link rel="stylesheet" href="signup.css">
+</head>
+<body>
+    <div id="notification" class="notification"></div>
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="home.html">PresenceHub</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="login.html">Login</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="signup.html">Sign Up</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <main class="container py-5 mt-5">
+        <section id="signup" class="card shadow-lg mx-auto" style="max-width: 400px;">
+            <div class="card-body p-5">
+                <h2 class="display-6 fw-bold text-center mb-4">Sign Up</h2>
+                <form id="signup-form" class="d-flex flex-column gap-3">
+                    <input type="email" id="email" class="form-control form-control-lg" placeholder="Email" required>
+                    <input type="password" id="password" class="form-control form-control-lg" placeholder="Password" required>
+                    <select id="role" class="form-select form-control-lg" required>
+                        <option value="">Select Role</option>
+                        <option value="employee">Employee</option>
+                        <option value="admin">Admin</option>
+                        <option value="super_admin">Super Admin</option>
+                    </select>
+                    <input type="text" id="company" class="form-control form-control-lg" placeholder="Company Name" required>
+                    <button type="submit" class="btn btn-primary btn-lg position-relative">
+                        Sign Up
+                        <div id="signup-spinner" class="spinner"></div>
+                    </button>
+                    <p class="text-center mt-3">Already have an account? <a href="login.html" class="text-gold">Login</a></p>
+                </form>
+            </div>
+        </section>
+    </main>
+    <footer class="bg-dark text-white text-center py-4">
+        &copy; 2025 PresenceHub | <a href="privacy.html" class="text-gold">Privacy Policy</a> |
+        <a href="terms.html" class="text-gold">Terms of Service</a>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="signup.js"></script>
+</body>
+</html>

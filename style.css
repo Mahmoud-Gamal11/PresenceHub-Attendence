@@ -1,0 +1,197 @@
+:root {
+    --primary: #0A6C74; 
+    --gold: #FFD700; 
+    --dark-bg: #1A202C; 
+    --light-bg: #F8FAFC; 
+    --text-dark: #1A202C;
+    --text-light: #F8FAFC;
+    --shadow: rgba(0, 0, 0, 0.3);
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --light-bg: #1A202C;
+        --text-dark: #F8FAFC;
+        --text-light: #1A202C;
+    }
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: var(--light-bg);
+    color: var(--text-dark);
+    transition: background 0.3s ease, color 0.3s ease; 
+}
+
+.dark body {
+    background: var(--dark-bg);
+    color: var(--text-light);
+}
+
+.navbar {
+    background: linear-gradient(90deg, var(--primary) 0%, var(--dark-bg) 100%);
+    box-shadow: 0 4px 12px var(--shadow);
+    padding: 1rem 2rem;
+    z-index: 1000;
+}
+
+.navbar-brand {
+    font-size: 1.8rem;
+    font-weight: 900;
+    color: var(--gold) !important;
+    transition: transform 0.2s ease;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.navbar-brand:hover {
+    transform: scale(1.05);
+}
+
+.navbar-nav {
+    display: flex;
+    align-items: center;
+}
+
+.nav-link {
+    color: var(--text-light) !important;
+    font-weight: 600;
+    font-size: 1.1rem;
+    padding: 0.5rem 1rem;
+    margin: 0 0.5rem;
+    transition: all 0.2s ease;
+    position: relative;
+    text-decoration: none;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
+}
+
+.nav-link:hover, .nav-link.active {
+    color: var(--gold) !important;
+    transform: scale(1.1);
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--gold);
+    transition: width 0.2s ease;
+}
+
+.nav-link:hover::after, .nav-link.active::after {
+    width: 100%;
+}
+
+.btn-primary, .btn-clear {
+    background: var(--primary) !important;
+    border-color: var(--primary) !important;
+    transition: all 0.2s ease;
+    font-weight: 600;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+    color: var(--text-light) !important; 
+}
+
+.btn-primary:hover, .btn-clear:hover {
+    background: var(--gold) !important;
+    border-color: var(--gold) !important;
+    transform: scale(1.05);
+    color: var(--text-dark) !important;
+}
+
+.btn-outline-primary {
+    
+    border-color: var(--primary);
+    color: var(--primary);
+    transition: all 0.2s ease;
+    font-weight: 600;
+}
+
+.btn-outline-primary:hover {
+    background: var(--gold);
+    border-color: var(--gold);
+    color: var(--text-dark);
+    transform: scale(1.05);
+}
+
+.notification {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    padding: 1rem 2rem;
+    border-radius: 12px;
+    z-index: 2000;
+    opacity: 0;
+    transform: translateY(-20px);
+    max-width: 400px;
+    box-shadow: 0 8px 24px var(--shadow);
+}
+
+.notification.success {
+    background: var(--gold);
+    color: var(--text-dark);
+}
+
+.notification.error {
+    background: #EF4444;
+    color: var(--text-light);
+}
+
+.feature-card {
+    border: none;
+    border-radius: 12px;
+    background: linear-gradient(90deg, var(--primary) 0%, var(--dark-bg) 100%) ;
+    color: white;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.dark .feature-card {
+    background: #2D3748;
+}
+
+.feature-card:hover {
+    transform: translateY(-10px) scale(1.03);
+    box-shadow: 0 16px 32px rgba(0, 0, 0, 0.2);
+}
+
+footer {
+    background: var(--dark-bg);
+}
+
+.text-gold {
+    color: var(--gold) !important;
+    transition: color 0.2s ease;
+}
+
+.text-gold:hover {
+    color: var(--text-light) !important;
+}
+
+h1, h2, h3, .lead {
+    font-weight: 700;
+    color: var(--text-dark);
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+}
+
+.dark h1, .dark h2, .dark h3, .dark .lead {
+    color: var(--text-light);
+    text-shadow: 0 1px 1px rgba(255, 255, 255, 0.2);
+}
+
+@media (max-width: 768px) {
+    .navbar-nav {
+        background: var(--primary);
+        padding: 1rem;
+        border-radius: 8px;
+        margin-top: 0.5rem;
+    }
+    .nav-link {
+        padding: 0.75rem;
+        font-size: 1rem;
+    }
+    .btn-clear {
+        font-size: 1rem;
+    }
+}

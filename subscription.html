@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PresenceHub - Subscription</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <link rel="stylesheet" href="subscription.css">
+</head>
+
+<body>
+    <div id="notification" class="notification"></div>
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="home.html">PresenceHub</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="dashboard.html">Dashboard</a></li>
+                    <li class="nav-item"><a class="nav-link" href="reports.html">Reports</a></li>
+                    <li class="nav-item"><a class="nav-link" href="user-management.html">User Management</a></li>
+                    <li class="nav-item"><a class="nav-link" href="complaints.html">Complaints</a></li>
+                    <li class="nav-item"><a class="nav-link" href="integrations.html">Integrations</a></li>
+                    <li class="nav-item"><a class="nav-link" href="vacations.html">Vacations</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="subscription.html">Subscription</a></li>
+                    <li class="nav-item"><a class="nav-link" href="settings.html">Account</a></li>
+                    <li class="nav-item"><a class="nav-link text-danger" href="login.html" onclick="logout()">Logout</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <main class="container py-5 mt-5">
+        <section id="subscription">
+            <h2 class="display-6 fw-bold mb-4 text-center">Choose Your Plan</h2>
+            <div class="row g-4 justify-content-center">
+                <div class="col-md-4">
+                    <div class="card shadow-sm plan-card h-100">
+                        <div class="card-body text-center">
+                            <h3 class="plan-name">Basic</h3>
+                            <div class="price">$0<span class="period">/month</span></div>
+                            <ul class="plan-features mt-4">
+                                <li>✓ Up to 10 employees</li>
+                                <li>✓ Basic reporting</li>
+                                <li>✓ Email support</li>
+                            </ul>
+                            <button class="btn btn-outline-primary w-100 mt-4" onclick="selectPlan('basic')">Select
+                                Plan</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card shadow-lg plan-card recommended h-100 border-primary">
+                        <div class="card-body text-center position-relative">
+                            <div class="recommended-badge">Most Popular</div>
+                            <h3 class="plan-name">Pro</h3>
+                            <div class="price">$29<span class="period">/month</span></div>
+                            <ul class="plan-features mt-4">
+                                <li>✓ Up to 100 employees</li>
+                                <li>✓ Advanced reporting</li>
+                                <li>✓ Priority support</li>
+                                <li>✓ Integrations</li>
+                            </ul>
+                            <button class="btn btn-primary w-100 mt-4" onclick="selectPlan('pro')">Select Plan</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card shadow-sm plan-card h-100">
+                        <div class="card-body text-center">
+                            <h3 class="plan-name">Enterprise</h3>
+                            <div class="price">$99<span class="period">/month</span></div>
+                            <ul class="plan-features mt-4">
+                                <li>✓ Unlimited employees</li>
+                                <li>✓ Custom reporting</li>
+                                <li>✓ 24/7 support</li>
+                                <li>✓ Custom integrations</li>
+                            </ul>
+                            <button class="btn btn-outline-primary w-100 mt-4" onclick="selectPlan('enterprise')">Select
+                                Plan</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card shadow-sm mt-5">
+                <div class="card-body">
+                    <h3 class="h5 fw-bold mb-3">Current Plan</h3>
+                    <div id="current-plan" class="row align-items-center">
+                        <div class="col-md-8">
+                            <h4 id="plan-name">Basic</h4>
+                            <p id="plan-details" class="text-muted">Free plan - Up to 10 employees</p>
+                        </div>
+                        <div class="col-md-4 text-end">
+                            <button id="upgrade-btn" class="btn btn-primary" onclick="upgradePlan()">Upgrade
+                                Plan</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="bg-dark text-white text-center py-4">
+        &copy; 2025 PresenceHub | <a href="privacy.html" class="text-gold">Privacy Policy</a> |
+        <a href="terms.html" class="text-gold">Terms of Service</a>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="subscription.js"></script>
+</body>
+
+</html>

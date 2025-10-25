@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PresenceHub - Home</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <link rel="preload" href="style.css" as="style"> <!-- preload للـ CSS عشان سرعة -->
+    <link rel="stylesheet" href="style.css">
+    <style>
+        ul li {
+            color: white !important;
+        }
+
+        body.no-transition {
+            transition: none !important;
+        }
+
+        /* إزالة transition مؤقتة */
+    </style>
+</head>
+
+<body class="no-transition"> <!-- class مؤقت للثبات -->
+    <div id="notification" class="notification"></div>
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html">PresenceHub</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link active" style="color: white;" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="dashboard.html">Dashboard</a></li>
+                    <li class="nav-item"><a class="nav-link" href="reports.html">Reports</a></li>
+                    <li class="nav-item"><a class="nav-link" href="user-management.html">User Management</a></li>
+                    <li class="nav-item"><a class="nav-link " href="complaints.html">Complaints</a></li>
+                    <li class="nav-item"><a class="nav-link " href="integrations.html">Integrations</a></li>
+                    <li class="nav-item"><a class="nav-link" href="vacations.html">Vacations</a></li>
+                    <li class="nav-item"><a class="nav-link" href="subscription.html">Subscription</a></li>
+
+                    <li class="nav-item"><a class="nav-link" href="settings.html">Account</a></li>
+                    <li class="nav-item"><a class="nav-link text-danger" href="login.html" onclick="logout()">Logout</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <main class="container py-5 mt-5">
+        <section id="hero" class="text-center py-5">
+            <h1 class="display-4 fw-bold">Welcome to PresenceHub</h1>
+            <p class="lead">Streamline your workforce management with real-time attendance tracking and analytics.</p>
+            <div class="d-flex justify-content-center gap-3 mt-4">
+                <a href="signup.html" class="btn btn-primary btn-lg btn-clear">Get Started</a>
+                <a href="login.html" class="btn btn-outline-primary btn-lg btn-clear">Login</a>
+            </div>
+        </section>
+        <section id="features" class="py-5">
+            <h2 class="display-6 fw-bold text-center mb-5">Why Choose PresenceHub?</h2>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card shadow-sm feature-card">
+                        <div class="card-body">
+                            <h3 class="h5 fw-bold">Real-Time Tracking</h3>
+                            <p>Monitor employee attendance with geofenced check-ins.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card shadow-sm feature-card">
+                        <div class="card-body">
+                            <h3 class="h5 fw-bold">Detailed Reports</h3>
+                            <p>Generate insightful analytics for better decision-making.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card shadow-sm feature-card">
+                        <div class="card-body">
+                            <h3 class="h5 fw-bold">Seamless Integrations</h3>
+                            <p>Connect with your existing HR systems effortlessly.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="bg-dark text-white text-center py-4">
+        &copy; 2025 PresenceHub | <a href="privacy.html" class="text-gold">Privacy Policy</a> |
+        <a href="terms.html" class="text-gold">Terms of Service</a>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
